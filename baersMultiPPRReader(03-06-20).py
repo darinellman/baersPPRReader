@@ -3,9 +3,9 @@ from openpyxl import Workbook
 
 import re
 
-baersRegex = re.compile(r'''(\d{9})\s(\w{4})\s(.{30})\s(\d{2})\s(.{7})\s(.{7})(.{0,7})''')
+baersRegex = re.compile(r'''(\d{9})\s(\w{4})\s(.{30})\s(.{7})\s(.{7})\s(.{0,7})(\d{2})''')
 
-PPRQty = 3
+PPRQty = 6
 
 for pprnum in range(PPRQty):
 
