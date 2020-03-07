@@ -3,6 +3,10 @@ from openpyxl import Workbook
 
 import re
 
+#Need to change this script so that it exports all txt files into the same excel file
+
+
+
 baersRegex = re.compile(r'''(\d{9})\s(\w{4})\s(.{30})\s(.{7})\s(.{7})\s(.{0,7})\s(\d{2})''')
 
 PPRQty = 8
@@ -38,27 +42,26 @@ for pprnum in range(PPRQty):
 
 
 
-    ws['C5'] = "you didn't copy amything"
+    ws['C5'] = "you didn't copy anything"
 
 
 
     rowcnt = 2
 
     for line in range(len(lines)):
-        ITM_CD, VE_CD, VSN, ST, ADV_PRC, RET_PRC, PRC1 = lines[line]
+        ITM_CD, VE_CD, VSN, ADV_PRC, RET_PRC, PRC1, ST = lines[line]
 
-        #print(skus[item])
-        #if str(vend) in carey_codes:
+
 
         print(VE_CD)
 
         ws['A' + str(rowcnt)] = ITM_CD
         ws['B' + str(rowcnt)] = VE_CD
         ws['C' + str(rowcnt)] = VSN
-        ws['D' + str(rowcnt)] = ST
-        ws['E' + str(rowcnt)] = (ADV_PRC)
-        ws['F' + str(rowcnt)] = (RET_PRC)
-        ws['G' + str(rowcnt)] = (PRC1)
+        ws['D' + str(rowcnt)] = (ADV_PRC)
+        ws['E' + str(rowcnt)] = (RET_PRC)
+        ws['F' + str(rowcnt)] = (PRC1)
+        ws['G' + str(rowcnt)] = ST
 
 
         rowcnt += 1
