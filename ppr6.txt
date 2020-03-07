@@ -1,14 +1,8 @@
-live> --03-06-20 - PPR's (all) (02-16-20 thru 03-05-20) (uph, case, & rugs)
+
+
+--03-06-20 - PPR's (all) (02-16-20 thru 03-05-20) (uph, case, & rugs)
  
-SELECT ITM.ITM_CD, ITM.VE_CD, ITM.VSN, ITM.ADV_PRC, ITM.RET_PRC, ITM.PRC1, ITM_F
-IFL.STORE_CD
-FROM INV.ITM ITM, INV.ITM_FIFL ITM_FIFL
-WHERE ITM.ITM_CD = ITM_FIFL.ITM_CD
-AND ((ITM.ADV_PRC BETWEEN 0.01 And 1000000.00) And ITM.ADV_PRC IS NOT NULL)
-AND (ITM_FIFL.STORE_CD BETWEEN '01' And '01')
-AND (ITM.ITM_CD BETWEEN '014000000' And '859985700')
-AND (ITM.PRC3_CHNG_DT > DATE '2020-02-15')
-ORDER BY ITM.VE_CD, ITM.VSN DESC;live> live>   2    3    4    5    6    7    8
+
  
 ITM_CD    VE_C VSN                            ADV_PRC RET_PRC    PRC1 ST
 --------- ---- ------------------------------ ------- ------- ------- --

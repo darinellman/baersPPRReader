@@ -3,9 +3,9 @@ from openpyxl import Workbook
 
 import re
 
-baersRegex = re.compile(r'''(\d{9})\s(\w{4})\s(.{30})\s(\d{2})\s(.{7})\s(.{7})(.{0,7})''')
+baersRegex = re.compile(r'''(\d{9})\s(\w{4})\s(.{30})\s(.{7})\s(.{7})\s(.{0,7})\s(\d{2})''')
 
-PPRQty = 3
+PPRQty = 8
 
 for pprnum in range(PPRQty):
 
@@ -31,10 +31,10 @@ for pprnum in range(PPRQty):
     ws['A1'] = 'ITM_CD'
     ws['B1'] = 'VE_CD'
     ws['C1'] = 'VSN'
-    ws['D1'] = 'ST'
-    ws['E1'] = 'ADV_PRC'
-    ws['F1'] = 'RET_PRC'
-    ws['G1'] = 'PRC1'
+    ws['D1'] = 'ADV_PRC'
+    ws['E1'] = 'RET_PRC'
+    ws['F1'] = 'PRC1'
+    ws['G1'] = 'ST'
 
 
 
